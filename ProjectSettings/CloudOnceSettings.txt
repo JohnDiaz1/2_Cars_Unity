@@ -1,0 +1,18 @@
+{
+	"AchievementIDs":[],
+	"LeaderboardIDs":[
+		{
+			"InternalID":"Top_players",
+			"AppleID":"",
+			"GoogleID":"CgkI_MPUsr8bEAIQAA"
+		}
+	],
+	"CloudVariables":[],
+	"AppleSupported":false,
+	"GoogleSupported":true,
+	"GoogleAppID":"944730612220",
+	"GoogleSetupRun":true,
+	"DebugModeEnabled":false,
+	"Version":"2.7.2",
+	"SettingsLocation":"0"
+}

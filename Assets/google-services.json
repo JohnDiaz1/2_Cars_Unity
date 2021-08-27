@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "433224717430",
+    "firebase_url": "https://juegos-y-apps-unity.firebaseio.com",
+    "project_id": "juegos-y-apps-unity",
+    "storage_bucket": "juegos-y-apps-unity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433224717430:android:e7c1760baba1aea36ffb57",
+        "android_client_info": {
+          "package_name": "com.towo.crashcars"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "433224717430-r2dhvftc7um6fehsinh4q1goh42u5rut.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE1lGR-AzMTHxB781xjMPwXtRiXZWb3vo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "433224717430-r2dhvftc7um6fehsinh4q1goh42u5rut.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433224717430:android:1a218afa77bacb866ffb57",
+        "android_client_info": {
+          "package_name": "com.towo.flappyovni"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "433224717430-r2dhvftc7um6fehsinh4q1goh42u5rut.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE1lGR-AzMTHxB781xjMPwXtRiXZWb3vo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "433224717430-r2dhvftc7um6fehsinh4q1goh42u5rut.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-3120121289944186~2671979387"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433224717430:android:b6dfdc1ea8cf77926ffb57",
+        "android_client_info": {
+          "package_name": "com.towogames.galacticgame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "433224717430-r2dhvftc7um6fehsinh4q1goh42u5rut.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE1lGR-AzMTHxB781xjMPwXtRiXZWb3vo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "433224717430-r2dhvftc7um6fehsinh4q1goh42u5rut.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
