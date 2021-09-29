@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:433224717430:android:e7c1760baba1aea36ffb57",
+        "mobilesdk_app_id": "1:433224717430:android:40146639c890b3476ffb57",
         "android_client_info": {
           "package_name": "com.towo.crashcars"
         }
@@ -33,17 +33,26 @@
             }
           ]
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-3254757154675329~8121259602"
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:433224717430:android:1a218afa77bacb866ffb57",
+        "mobilesdk_app_id": "1:433224717430:android:d867459abd66bee96ffb57",
         "android_client_info": {
           "package_name": "com.towo.flappyovni"
         }
       },
       "oauth_client": [
         {
+          "client_id": "433224717430-kkhp8nt8bp513kloeu2av5m8jteigoh1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.towo.flappyovni",
+            "certificate_hash": "26e36598e0a3cb79bdf91f1a60da0f131adff683"
+          }
+        },
+        {
           "client_id": "433224717430-r2dhvftc7um6fehsinh4q1goh42u5rut.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -63,17 +72,25 @@
           ]
         }
       },
-      "admob_app_id": "ca-app-pub-3120121289944186~2671979387"
+      "admob_app_id": "ca-app-pub-3254757154675329~5440445311"
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:433224717430:android:b6dfdc1ea8cf77926ffb57",
+        "mobilesdk_app_id": "1:433224717430:android:6132a01b1e8c095b6ffb57",
         "android_client_info": {
-          "package_name": "com.towogames.galacticgame"
+          "package_name": "com.towo.pixeladventurerecharged"
         }
       },
       "oauth_client": [
         {
+          "client_id": "433224717430-tp5f07esqlm7l3sm9ooka2n1ein3124d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.towo.pixeladventurerecharged",
+            "certificate_hash": "c5c2332883efb0d84fa48a401e75b455d93dcca6"
+          }
+        },
+        {
           "client_id": "433224717430-r2dhvftc7um6fehsinh4q1goh42u5rut.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -92,7 +109,8 @@
             }
           ]
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-3120121289944186~6669974652"
     }
   ],
   "configuration_version": "1"

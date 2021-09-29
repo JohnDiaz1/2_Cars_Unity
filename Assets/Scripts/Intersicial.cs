@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using GoogleMobileAds.Api;
 
 public class Intersicial : MonoBehaviour
 {
 
-    string adUnitId = "add235ecc4719cb0";
-    int retryAttempt;
+    private static InterstitialAd interstitial;
+    string adUnitId = "ca-app-pub-3254757154675329/5044805592";
 
     // Start is called before the first frame update
     void Start()
     {
         if(PlayerPrefs.GetInt("ads") != 1){
 
-        this.RequestInterstitial();
+        RequestInterstitial();
 
      }
     }
@@ -22,50 +23,49 @@ public class Intersicial : MonoBehaviour
     private void RequestInterstitial()
     {
 
-        // Attach callback
-    MaxSdkCallbacks.OnInterstitialLoadedEvent += OnInterstitialLoadedEvent;
-    MaxSdkCallbacks.OnInterstitialLoadFailedEvent += OnInterstitialFailedEvent;
-    MaxSdkCallbacks.OnInterstitialAdFailedToDisplayEvent += InterstitialFailedToDisplayEvent;
-    MaxSdkCallbacks.OnInterstitialHiddenEvent += OnInterstitialDismissedEvent;
+        interstitial = new InterstitialAd(adUnitId);
 
-    // Load the first interstitial
-    LoadInterstitial();
+        // Called when an ad request has successfully loaded.
+        interstitial.OnAdLoaded += HandleOnAdLoaded;
+        // Called when an ad request failed to load.
+        interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+        // Called when an ad is shown.
+        interstitial.OnAdOpening += HandleOnAdOpened;
+        // Called when the ad is closed.
+        interstitial.OnAdClosed += HandleOnAdClosed;
+
+        // Create an empty ad request.
+        AdRequest request = new AdRequest.Builder().Build();
+        // Load the interstitial with the request.
+        interstitial.LoadAd(request);
 
     }
 
-   private void LoadInterstitial()
-{
-    MaxSdk.LoadInterstitial(adUnitId);
-}
+    public static void showIntersicial()
+    {
+        if (interstitial.IsLoaded())
+        {
+            interstitial.Show();
+        }
+    }
 
-private void OnInterstitialLoadedEvent(string adUnitId)
-{
-    // Interstitial ad is ready to be shown. MaxSdk.IsInterstitialReady(adUnitId) will now return 'true'
+    public void HandleOnAdLoaded(object sender, EventArgs args)
+    {
+        MonoBehaviour.print("HandleAdLoaded event received");
+    }
 
-    // Reset retry attempt
-    retryAttempt = 0;
-}
+    public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    {
+    }
 
-private void OnInterstitialFailedEvent(string adUnitId, int errorCode)
-{
-    // Interstitial ad failed to load 
-    // We recommend retrying with exponentially higher delays up to a maximum delay (in this case 64 seconds)
+    public void HandleOnAdOpened(object sender, EventArgs args)
+    {
+        MonoBehaviour.print("HandleAdOpened event received");
+    }
 
-    retryAttempt++;
-    double retryDelay = Math.Pow(2, Math.Min(6, retryAttempt));
-    
-    Invoke("LoadInterstitial", (float) retryDelay);
-}
+    public void HandleOnAdClosed(object sender, EventArgs args)
+    {
+        MonoBehaviour.print("HandleAdClosed event received");
+    }
 
-private void InterstitialFailedToDisplayEvent(string adUnitId, int errorCode)
-{
-    // Interstitial ad failed to display. We recommend loading the next ad
-    LoadInterstitial();
-}
-
-private void OnInterstitialDismissedEvent(string adUnitId)
-{
-    // Interstitial ad is hidden. Pre-load the next ad
-    LoadInterstitial();
-}
 }

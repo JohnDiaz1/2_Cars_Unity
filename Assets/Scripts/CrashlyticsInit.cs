@@ -2,22 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Firebase;
+using GoogleMobileAds.Api;
 
 public class CrashlyticsInit : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-       if(PlayerPrefs.GetInt("ads", 0) != 1){ 
-        
-       MaxSdkCallbacks.OnSdkInitializedEvent += (MaxSdkBase.SdkConfiguration sdkConfiguration) => {
-    // AppLovin SDK is initialized, start loading ads
-       // MaxSdk.ShowMediationDebugger();
-        };
+       if(PlayerPrefs.GetInt("ads", 0) != 1){
 
-        MaxSdk.SetSdkKey("LGJb2N_O2AUMyUaLEkHNXDBedPER7neqaC1USC_8Tm5xA18NhqndDzR-teUIVZkQ04uhku4oq91_a2X4WIAPaq");
-        MaxSdk.InitializeSdk();
-    }
+            // Initialize the Google Mobile Ads SDK.
+            MobileAds.Initialize((initStatus) =>
+            {
+                Dictionary<string, AdapterStatus> map = initStatus.getAdapterStatusMap();
+                foreach (KeyValuePair<string, AdapterStatus> keyValuePair in map)
+                {
+                    string className = keyValuePair.Key;
+                    AdapterStatus status = keyValuePair.Value;
+                    switch (status.InitializationState)
+                    {
+                        case AdapterState.NotReady:
+                            // The adapter initialization did not complete.
+                            MonoBehaviour.print("Adapter: " + className + " not ready.");
+                            break;
+                        case AdapterState.Ready:
+                            // The adapter was successfully initialized.
+                            MonoBehaviour.print("Adapter: " + className + " is initialized.");
+                            break;
+                    }
+                }
+            });
+        }
 
         Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
             var dependencyStatus = task.Result;

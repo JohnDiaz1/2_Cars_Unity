@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject ScorePanel;
     private ReviewManager _reviewManager;
     private PlayReviewInfo _playReviewInfo;
+    //private Intersicial intersicial;
 
     public GameObject[] BlueGO;
     public GameObject[] OrangeGO;
@@ -47,10 +48,10 @@ public class GameManager : MonoBehaviour
         ScorePanel.SetActive(false);
         GameOver.SetActive(true);
 
-        if (MaxSdk.IsInterstitialReady("add235ecc4719cb0"))
-        {
-            MaxSdk.ShowInterstitial("add235ecc4719cb0");
-        }
+        //llamar a showintersicial
+        Intersicial.showIntersicial();
+
+        PlayServices.SaveCloudScore();
         PlayServices.AddScoreToLeaderBoard();
         
     }
@@ -69,7 +70,7 @@ public class GameManager : MonoBehaviour
 
     public void RateUs()
     {
-        // Application.OpenURL("https//:google.com");
+        //Application.OpenURL("https//:google.com");
         StartCoroutine(RequestReview());
 
     }
@@ -95,7 +96,7 @@ public class GameManager : MonoBehaviour
 
     public void Compartir()
     {
-
+        
     }
 
     IEnumerator RequestReview()
